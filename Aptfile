@@ -3,7 +3,7 @@ curl
 libcurl3-dev 
 git 
 libfreetype6-dev 
-libpng12-dev 
+libpng-dev
 libzmq3-dev 
 pkg-config 
 python-dev 

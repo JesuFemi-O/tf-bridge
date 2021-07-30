@@ -1,10 +1,10 @@
- # tf-bridge
- 
+# tf-bridge
+
 Deploy both [tensor-bridge](https://github.com/Babylonpartners/tf-bridge) and [tensorflow-serving](https://www.tensorflow.org/serving/) so that you can use JSON to talk to your TensorFlow models.
 
 ## Requirements
 
-You must provide a URL for a Tensorflow [SavedModel](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/python/saved_model/README.md) saved as a `.tar.gz` file. 
+You must provide a URL for a Tensorflow [SavedModel](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/python/saved_model/README.md) saved as a `.tar.gz` file.
 
 E.g.:
 
@@ -31,7 +31,7 @@ wide_deep_model/1/variables/variables.index
 
 ## Deploy
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/heroku/tf-bridge)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/JesuFemi-O/tf-bridge)
 
 ### From Source
 
@@ -53,9 +53,10 @@ A pre-made publicly available model is provided here:
 ```
 https://s3.amazonaws.com/octo-public/wide_deep_model.tar.gz
 ```
+
 Some background information about the model can be found [here](https://www.tensorflow.org/tutorials/wide_and_deep).
 
-Set the provided URL as a config var via the button deploy or set it manually: 
+Set the provided URL as a config var via the button deploy or set it manually:
 
 ```
 heroku config:set TENSORFLOW_MODEL_URL=https://s3.amazonaws.com/octo-public/wide_deep_model.tar.gz -a $appName
@@ -86,8 +87,8 @@ Accuracy:  0.8
 See [`SIEGE.md`](/SIEGE.md) for details
 
 ## Notes
+
 1. The [Apt buildpack](https://github.com/heroku/heroku-buildpack-apt) loads `tensorflow-model-server` & deps
 1. The [Runit buildpack](https://github.com/danp/heroku-buildpack-runit) manages `tensorflow-serving` & `tf-bridge` processes
 1. `.profile.d` script loads models from the `TENSORFLOW_MODEL_URL` config var
 1. Models must be exported using the `SavedModelBuilder` module, which is outlined [here](https://www.tensorflow.org/serving/serving_basic)
-
