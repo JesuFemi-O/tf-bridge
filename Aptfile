@@ -8,7 +8,7 @@ libzmq3-dev
 pkg-config 
 python-dev 
 python-numpy 
-python-pip 
+python3-pip 
 software-properties-common 
 swig 
 zip 
